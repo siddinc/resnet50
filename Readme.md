@@ -8,7 +8,7 @@ The goal of this project is to build and train a model which is able to classify
 ## Dataset:
 - [Fruits-360 Dataset](https://www.kaggle.com/moltean/fruits) used for training and testing
 - 82213 images of fruits and vegetables
-- All images are RGB with dimensions 100 x 100 x 3 pixels
+- All images are RGB with dimensions 100 x 100 pixels
 - Training set: 61488 images
 - Test set: 20622 images
 - Number of classes: 120
