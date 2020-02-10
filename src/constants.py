@@ -4,7 +4,7 @@ import os
 IMG_DIM = (100, 100, 3)
 IMAGE_SIZE = [100, 100]
 NO_OF_EPOCHS = 20
-BATCH_SIZE = 64
+BATCH_SIZE = 32
 TRAIN_PATH_FROM = os.path.abspath('../datasets/fruits-360/Training')
 TEST_PATH_FROM = os.path.abspath('../datasets/fruits-360/Test')
 TRAIN_PATH_TO = os.path.abspath('../datasets/fruits-360-small/Training')
