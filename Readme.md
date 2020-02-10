@@ -1,5 +1,5 @@
-# Image Classification using custom ResNet
-The goal of this project is to build and train a model which is able to classify different fruits and vegetables.
+# Image Classification using ResNet50
+The goal of this project is to build and train a custom ResNet model with 50 layers which is able to classify different fruits and vegetables.
 
 ## Tech used:
 - TensorFlow 2.0.0
