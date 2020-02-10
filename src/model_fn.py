@@ -2,6 +2,7 @@ from datetime import datetime
 from tensorflow.keras.layers import Input, Add, Dense, Activation, BatchNormalization, Flatten, Conv2D, ZeroPadding2D, AveragePooling2D, MaxPooling2D
 from tensorflow.keras.models import Model, load_model, save_model
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
+import constants
 
 
 def identity_block(x, f, filters, stage, block):
@@ -128,18 +129,17 @@ def data_augmentation(batch_size, image_size):
         height_shift_range=0.1,
         shear_range=0.2,
         zoom_range=0.1,
-        horizontal_flip=True,
     )
 
     train_generator = data_generator.flow_from_directory(
-        train_path,
+        constants.TRAIN_PATH,
         target_size=image_size,
         shuffle=True,
         batch_size=batch_size
     )
 
     validation_generator = data_generator.flow_from_directory(
-        valid_path,
+        constants.TEST_PATH,
         target_size=image_size,
         shuffle=True,
         batch_size=batch_size,
@@ -147,13 +147,13 @@ def data_augmentation(batch_size, image_size):
     return (train_generator, validation_generator)
 
 
-def train_model(model, generators, no_of_epochs, batch_size):
+def train_model(model, generators, no_of_epochs, batch_size, len_train_image_files, len_test_image_files):
     r = model.fit_generator(
         generators[0],
         validation_data=generators[1],
         epochs=no_of_epochs,
-        steps_per_epoch=len(image_files) // batch_size,
-        validation_steps=len(valid_image_files) // batch_size
+        steps_per_epoch=len_train_image_files // batch_size,
+        validation_steps=len_test_image_files // batch_size,
     )
     return r
 
