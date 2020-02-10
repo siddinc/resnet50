@@ -1,7 +1,7 @@
+from glob import glob
 import constants
 import model_fn
 import utility_fn
-from glob import glob
 
 
 def main():

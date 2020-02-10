@@ -1,5 +1,10 @@
 from datetime import datetime
-from tensorflow.keras.layers import Input, Add, Dense, Activation, BatchNormalization, Flatten, Conv2D, ZeroPadding2D, AveragePooling2D, MaxPooling2D
+from tensorflow.keras.layers import (
+    Input, Add, Dense, Activation,
+    BatchNormalization, Flatten,
+    Conv2D, ZeroPadding2D,
+    AveragePooling2D, MaxPooling2D,
+)
 from tensorflow.keras.models import Model, load_model, save_model
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import constants
